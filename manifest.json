@@ -14,8 +14,16 @@
     "default_popup": "dist/index.html"
   },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["js/background.js"]
   },
+  "content_scripts": [
+    {
+      "matches": ["*://*.lanhuapp.com/*", "*://lanhuapp.com/*"],
+      "js": ["js/vue.js", "js/element.js", "js/content-script.js"],
+      "css": ["css/element.css", "css/custom.css"],
+      "run_at": "document_start"
+    }
+  ],
   "permissions": ["tabs", "notifications", "webRequest", "webRequestBlocking", "storage", "cookies", "<all_urls>"],
   "homepage_url": "https://github.com/YinDongFang/lanhu-agent"
 }
