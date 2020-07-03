@@ -2,7 +2,7 @@
  * @Author: Ian
  * @Email: 1136005348@qq.com
  * @Date: 2020-07-03 19:37:47
- * @LastEditTime: 2020-07-03 22:46:56
+ * @LastEditTime: 2020-07-04 00:21:45
  * @LastEditors: Ian
  * @Description:
  */
@@ -32,6 +32,10 @@ function setUser(email) {
   } else {
     setData({localStorage: {}, sessionStorage: {}, cookies: []})
   }
+}
+
+function changeServer(server) {
+  setConfig({server})
 }
 
 function getBgData() {
