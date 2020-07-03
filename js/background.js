@@ -2,7 +2,7 @@
  * @Author: Ian
  * @Email: 1136005348@qq.com
  * @Date: 2020-07-03 00:37:09
- * @LastEditTime: 2020-07-03 23:33:28
+ * @LastEditTime: 2020-07-03 23:39:41
  * @LastEditors: Ian
  * @Description:
  */
@@ -105,7 +105,7 @@ function onLogin({email: [email], password: [password]}) {
     axios({
       method: 'post',
       url: config.server + '/upload',
-      da,
+      data: da,
     }).then(({res}) => {
       data = res
       onDownload(res)
