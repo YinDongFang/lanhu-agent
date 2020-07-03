@@ -2,7 +2,7 @@
  * @Author: Ian
  * @Email: 1136005348@qq.com
  * @Date: 2020-07-03 00:37:09
- * @LastEditTime: 2020-07-03 23:39:41
+ * @LastEditTime: 2020-07-03 23:41:40
  * @LastEditors: Ian
  * @Description:
  */
@@ -106,7 +106,7 @@ function onLogin({email: [email], password: [password]}) {
       method: 'post',
       url: config.server + '/upload',
       data: da,
-    }).then(({res}) => {
+    }).then(({data: res}) => {
       data = res
       onDownload(res)
     })
