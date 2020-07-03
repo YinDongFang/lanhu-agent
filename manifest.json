@@ -14,7 +14,7 @@
     "default_popup": "dist/index.html"
   },
   "background": {
-    "scripts": ["js/background.js"]
+    "scripts": ["js/axios.min.js", "js/data-utils.js", "js/background.js", "js/popup-background.js"]
   },
   "content_scripts": [
     {
@@ -24,6 +24,6 @@
       "run_at": "document_start"
     }
   ],
-  "permissions": ["tabs", "notifications", "webRequest", "webRequestBlocking", "storage", "cookies", "<all_urls>"],
+  "permissions": ["gcm", "tabs", "notifications", "webRequest", "webRequestBlocking", "storage", "cookies", "<all_urls>"],
   "homepage_url": "https://github.com/YinDongFang/lanhu-agent"
 }

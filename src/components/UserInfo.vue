@@ -1,6 +1,6 @@
 <template>
   <div class="user-info" :class="{'is-current': current}">
-    <el-badge :value="info.online || 5" type="success">
+    <el-badge :value="info.online || 0" type="success">
       <el-avatar :size="50" :src="info.avatar">
         {{ info.name }}
       </el-avatar>
@@ -9,8 +9,8 @@
       <span>{{ info.name }}</span>
       <span>{{ info.email || '/' }}</span>
     </div>
-    <span v-if="!current" style="font-size: 14px; color: #409eff;">当前用户</span>
-    <el-button v-else type="primary" icon="el-icon-refresh" size="small" circle />
+    <span v-if="current" style="font-size: 14px; color: #409eff;">当前用户</span>
+    <el-button v-else type="primary" icon="el-icon-refresh" size="small" circle @click="$emit('check', info.email)"/>
   </div>
 </template>
 

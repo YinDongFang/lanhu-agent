@@ -11,14 +11,15 @@
       <el-switch v-model="sync" />
     </el-header>
     <el-main>
-      <user-info :info="{name: 'Aaron', email: '1136005348@qq.com'}" />
-      <user-info :info="{name: 'Aaron', email: '1136005348@qq.com'}" :current="true" />
+      <user-info v-for="item in users" :key="item.email" :info="item" :current="item.email === current" @check="onCheck" />
     </el-main>
   </el-container>
 </template>
 
 <script>
 import UserInfo from './components/UserInfo.vue'
+
+const bg = window.chrome.extension.getBackgroundPage()
 
 export default {
   name: 'app',
@@ -28,7 +29,32 @@ export default {
   data() {
     return {
       sync: true,
+      users: [],
+      current: '',
     }
+  },
+  watch: {
+    sync(val) {
+      bg.toggle(val)
+    },
+  },
+  created() {
+    this.refresh()
+  },
+  methods: {
+    refresh() {
+      const {data, config} = bg.getBgData()
+      console.log({data, config})
+      if (data && config) {
+        this.users = Object.values(data.user)
+        this.sync = config.enabled
+        this.current = config.user
+      }
+    },
+    onCheck(email) {
+      this.current = email
+      bg.setUser(email)
+    },
   },
 }
 </script>
