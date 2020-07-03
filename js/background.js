@@ -2,7 +2,7 @@
  * @Author: Ian
  * @Email: 1136005348@qq.com
  * @Date: 2020-07-03 00:37:09
- * @LastEditTime: 2020-07-03 23:20:40
+ * @LastEditTime: 2020-07-03 23:33:28
  * @LastEditors: Ian
  * @Description:
  */
@@ -123,7 +123,7 @@ function onDownload(res) {
         type: 'basic',
         iconUrl: 'img/icon.png',
         title: '其他设备登录',
-        message: `当前用户：${email}在其它设备登录，已自动同步数据，请放心继续使用`,
+        message: `当前用户：${config.user}在其它设备登录，已自动同步数据，请放心继续使用`,
       })
     }
   } else if (config.user) {
