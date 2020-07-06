@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Lanhu Agent",
+  "version": "1.0.0",
+  "description": "蓝湖同用户多设备登录插件",
+  "icons": {
+    "16": "img/icon.png",
+    "48": "img/icon.png",
+    "128": "img/icon.png"
+  },
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_title": "Lanhu Agent",
+    "default_popup": "dist/index.html"
+  },
+  "background": {
+    "scripts": ["js/axios.min.js", "js/data-utils.js", "js/background.js", "js/popup-background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.lanhuapp.com/*", "*://lanhuapp.com/*"],
+      "js": ["js/vue.js", "js/element.js", "js/content-script.js"],
+      "css": ["css/element.css", "css/custom.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": ["gcm", "tabs", "notifications", "webRequest", "webRequestBlocking", "storage", "cookies", "<all_urls>"],
+  "homepage_url": "https://github.com/YinDongFang/lanhu-agent"
+}
