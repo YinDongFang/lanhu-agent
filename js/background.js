@@ -2,7 +2,7 @@
  * @Author: Ian
  * @Email: 1136005348@qq.com
  * @Date: 2020-07-03 00:37:09
- * @LastEditTime: 2020-07-03 23:41:40
+ * @LastEditTime: 2020-07-05 17:18:00
  * @LastEditors: Ian
  * @Description:
  */
@@ -117,7 +117,7 @@ function onDownload(res) {
   console.log(`onDownload`)
   console.log(res)
   if (data) {
-    if (config.user && data.user[config.user].timestamp !== res.user[config.user].timestamp) {
+    if (config.user && data.user[config.user] && data.user[config.user].timestamp !== res.user[config.user].timestamp) {
       setData(res.user[config.user])
       chrome.notifications.create(null, {
         type: 'basic',

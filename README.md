@@ -1,24 +1,9 @@
 # lanhu-agent
 
-## Project setup
-```
-npm install
-```
+蓝湖同用户多设备登录插件
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Features
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- 登录检测：浏览器登录蓝湖账户后自动更新用户信息到服务器
+- 其他设备登陆检测：其他设备重新登录当前账户时自动同步信息到本地，无需重新登录
+- 多账户切换：一键即可在任意账户之间无缝切换
